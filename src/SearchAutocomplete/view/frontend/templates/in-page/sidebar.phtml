@@ -1,0 +1,47 @@
+<?php
+/** @var \Mirasvit\SearchAutocomplete\Block\Injection $block */
+$sidebarPosition = $block->getLayeredNavigationPosition();
+?>
+
+<div class="mstInPage__sidebar" data-bind="visible: $parent.activeIndex() == 'magento_catalog_product'">
+    <?php if ($sidebarPosition == 'filters_sidebar') : ?>
+        <div class="mstInPage__bucketState" data-bind="foreach: { data: activeBuckets(), as: 'activeBucket' }">
+            <div class="mstInPage__bucketItemList listApplied" data-bind="foreach: { data: activeBucket.buckets, as: 'item' }">
+                <!-- ko if: item.isActive -->
+                <strong data-bind="text: activeBucket.label"></strong>
+                <div class="mstInPage__bucketItem itemApplied" data-bind="{ click: item.select}">
+                    <span data-bind="text: item.label"></span>
+                    <div class="mstInPage__close"></div>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    <?php endif ?>
+
+    <div class="mstInPage__bucketList">
+        <div data-bind="foreach: { data: buckets(), as: 'bucket' }">
+            <div class="mstInPage__bucket" data-bind="{ css: { _expanded: bucket.isExpanded } }">
+                <div class="mstInPage__bucketLabel" data-bind="{ click: bucket.expand }">
+                    <span data-bind="text: bucket.label"></span>
+                    <div class="mstInPage__bucketExpand"></div>
+                </div>
+                <!-- ko if: bucket.code == 'price' -->
+                <div data-slider="price" class="mstInPage__slider"></div>
+                <div class="mstInPage__sliderFromTo">
+                    <div data-bind="text: $parent.priceFrom() != -1 ? $parent.priceFrom : $parent.priceMin" class="_from"></div>
+                    <div data-bind="text: $parent.priceTo() != -1 ? $parent.priceTo : $parent.priceMax" class="_to"></div>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: bucket.code != 'price' -->
+                <div class="mstInPage__bucketItemList" data-bind="{ foreach: { data: bucket.items, as: 'item' }  }">
+                    <div class="mstInPage__bucketItem" data-bind="{ click: item.select, css: { _active: item.isActive } }">
+                        <input type="checkbox">
+                        <span data-bind="text: item.label"></span>
+                        <i data-bind="text: item.count"></i>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>

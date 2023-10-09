@@ -1,0 +1,13 @@
+{
+    "name": "mirasvit/module-search-ultimate",
+    "description": "Search Ultimate",
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Mirasvit\\SearchUltimate\\": "SearchUltimate"
+        }
+    }
+}

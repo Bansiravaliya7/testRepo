@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">search_validator_form.search_validator_form_data_source</item>
+            <item name="deps" xsi:type="string">search_validator_form.search_validator_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Validation</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">search_validator_form</item>
+        </item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="array">
+                <item name="name" xsi:type="string">back</item>
+                <item name="label" xsi:type="string" translate="true">Back</item>
+                <item name="class" xsi:type="string">back</item>
+                <item name="url" xsi:type="url" path="*/*/"/>
+            </item>
+        </item>
+    </argument>
+
+    <dataSource name="search_validator_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Mirasvit\Search\Ui\Validator\DataProvider</argument>
+            <argument name="name" xsi:type="string">search_validator_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+
+    <fieldset name="accuracy">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Accuracy of Search Results</item>
+            </item>
+        </argument>
+
+        <field name="searchTerm">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Search term</item>
+                    <item name="parameter" xsi:type="string">searchTerm</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="validate">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="title" xsi:type="string"><![CDATA[Validate]]></item>
+                    <item name="formElement" xsi:type="string">container</item>
+                    <item name="componentType" xsi:type="string">container</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="component" xsi:type="string">Mirasvit_Search/js/form/element/button_validate</item>
+                    <item name="template" xsi:type="string">ui/form/components/button/container</item>
+                    <item name="displayArea" xsi:type="string">insideGroup</item>
+                    <item name="additionalForGroup" xsi:type="boolean">true</item>
+                    <item name="sourceNames" xsi:type="array">
+                        <item name="search_term" xsi:type="string">search_validator_form.search_validator_form.accuracy.searchTerm</item>
+                    </item>
+                    <item name="buttonClasses" xsi:type="string">btn-validate</item>
+                    <item name="bindTo" xsi:type="string">accuracy</item>
+                    <item name="validateUrl" xsi:type="url" path="*/*/accuracy"/>
+                    <item name="actions" xsi:type="array">
+                        <item name="0" xsi:type="array">
+                            <item name="targetName" xsi:type="string">search_validator_form.search_validator_form.accuracy.validate</item>
+                            <item name="actionName" xsi:type="string">validate</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+    <fieldset name="indexing">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Indexing</item>
+            </item>
+        </argument>
+
+        <field name="entityID">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Entity ID</item>
+                    <item name="parameter" xsi:type="string">entityID</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="validate">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="title" xsi:type="string"><![CDATA[Validate]]></item>
+                    <item name="formElement" xsi:type="string">container</item>
+                    <item name="componentType" xsi:type="string">container</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="component" xsi:type="string">Mirasvit_Search/js/form/element/button_validate</item>
+                    <item name="template" xsi:type="string">ui/form/components/button/container</item>
+                    <item name="displayArea" xsi:type="string">insideGroup</item>
+                    <item name="additionalForGroup" xsi:type="boolean">true</item>
+                    <item name="sourceNames" xsi:type="array">
+                        <item name="entityID" xsi:type="string">search_validator_form.search_validator_form.indexing.entityID</item>
+                    </item>
+                    <item name="buttonClasses" xsi:type="string">btn-validate</item>
+                    <item name="bindTo" xsi:type="string">indexing</item>
+                    <item name="validateUrl" xsi:type="url" path="*/*/indexing"/>
+                    <item name="actions" xsi:type="array">
+                        <item name="0" xsi:type="array">
+                            <item name="targetName" xsi:type="string">search_validator_form.search_validator_form.indexing.validate</item>
+                            <item name="actionName" xsi:type="string">validate</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

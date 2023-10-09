@@ -1,0 +1,66 @@
+.mst-search-validator {
+    margin-top: 10px;
+    font-size:  12px;
+
+    h3 {
+        margin:      15px 0 10px 0;
+        color:       #333333;
+        font-size:   14px;
+        font-weight: 600;
+    }
+
+    pre {
+        border:     1px solid #eeeeee;
+        background: #f6f6f6;
+        padding:    10px;
+        max-height: 350px;
+        overflow:   scroll;
+    }
+
+    table {
+        width: 100%;
+
+        tr {
+            &:first-child {
+                position: sticky;
+                top:      77px;
+            }
+
+            th, td {
+                padding:        8px;
+                border:         1px solid #eeeeee;
+                vertical-align: top;
+
+                small {
+                    font-weight: normal;
+                    display:     block;
+                    text-align:  right;
+                    color:       #666666;
+                    font-size:   11px;
+                }
+            }
+
+            th {
+                white-space: nowrap;
+                text-align:  left;
+                background:  #f6f6f6;
+            }
+
+            td {
+                text-align:     left;
+                vertical-align: top;
+
+                &.sku {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
+
+body.search-validator-index {
+    .btn-validate {
+        max-width: 200px;
+        float:     right;
+    }
+}
