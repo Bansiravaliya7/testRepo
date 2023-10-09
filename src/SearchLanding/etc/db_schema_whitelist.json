@@ -1,0 +1,19 @@
+{
+    "mst_search_landing_page": {
+        "column": {
+            "page_id": true,
+            "query_text": true,
+            "url_key": true,
+            "title": true,
+            "meta_description": true,
+            "meta_keywords": true,
+            "layout_update": true,
+            "store_ids": true,
+            "is_active": true,
+            "description": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "mst_search_index": {
+        "column": {
+            "index_id": true,
+            "identifier": true,
+            "title": true,
+            "position": true,
+            "attributes_serialized": true,
+            "properties_serialized": true,
+            "status": true,
+            "is_active": true,
+            "code": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "mst_search_synonym": {
+        "column": {
+            "synonym_id": true,
+            "term": true,
+            "synonyms": true,
+            "store_id": true
+        },
+        "index": {
+            "MST_SEARCH_SYNONYM_TERM": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "mst_search_stopword": {
+        "column": {
+            "stopword_id": true,
+            "term": true,
+            "store_id": true
+        },
+        "index": {
+            "MST_SEARCH_STOPWORD_TERM": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "catalog_product_entity": {
+        "column": {
+            "mst_search_weight": true
+        }
+    },
+    "mst_search_score_rule": {
+        "column": {
+            "rule_id": true,
+            "title": true,
+            "store_ids": true,
+            "status": true,
+            "is_active": true,
+            "active_from": true,
+            "active_to": true,
+            "conditions_serialized": true,
+            "post_conditions_serialized": true,
+            "score_factor": true
+        },
+        "index": {
+            "MST_SEARCH_SCORE_RULE_STORE_IDS_IS_ACTIVE_ACTIVE_FROM_ACTIVE_TO": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "mst_search_score_rule_index": {
+        "column": {
+            "index_id": true,
+            "rule_id": true,
+            "store_id": true,
+            "product_id": true,
+            "score_factor": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

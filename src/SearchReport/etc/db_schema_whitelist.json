@@ -1,0 +1,25 @@
+{
+    "mst_search_report_log": {
+        "column": {
+            "log_id": true,
+            "query": true,
+            "misspell_query": true,
+            "fallback_query": true,
+            "results": true,
+            "ip": true,
+            "session": true,
+            "country": true,
+            "customer_id": true,
+            "order_item_id": true,
+            "clicks": true,
+            "source": true,
+            "created_at": true
+        },
+        "index": {
+            "MST_SEARCH_REPORT_LOG_LOG_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "mst_misspell_index": {
+        "column": {
+            "index_id": true,
+            "keyword": true,
+            "trigram": true,
+            "frequency": true
+        },
+        "index": {
+            "MST_MISSPELL_INDEX_TRIGRAM": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "mst_misspell_suggest": {
+        "column": {
+            "suggest_id": true,
+            "query": true,
+            "suggest": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

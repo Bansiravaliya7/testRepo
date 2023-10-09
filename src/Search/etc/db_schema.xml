@@ -14,18 +14,6 @@
             <column name="index_id"/>
         </constraint>
     </table>
-    <table name="mst_search_synonym" resource="default" engine="innodb" comment="Synonyms" disabled="true">
-        <column xsi:type="int" name="synonym_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Synonym Id"/>
-        <column xsi:type="varchar" name="term" nullable="false" length="255" comment="Term"/>
-        <column xsi:type="varchar" name="synonyms" nullable="false" length="255" comment="Synonyms"/>
-        <column xsi:type="int" name="store_id" padding="11" unsigned="false" nullable="false" identity="false" comment="Store Id"/>
-        <constraint xsi:type="primary" referenceId="PRIMARY">
-            <column name="synonym_id"/>
-        </constraint>
-        <index referenceId="MST_SEARCH_SYNONYM_TERM" indexType="btree">
-            <column name="term"/>
-        </index>
-    </table>
     <table name="mst_search_stopword" resource="default" engine="innodb" comment="Stopwords">
         <column xsi:type="int" name="stopword_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Stopword Id"/>
         <column xsi:type="varchar" name="term" nullable="false" length="255" comment="Stopword"/>
